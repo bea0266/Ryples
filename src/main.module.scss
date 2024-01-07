@@ -1,0 +1,31 @@
+.logo {
+    content: url("./assets/images/logo.png");
+    width: 294px;
+    height: 183px;
+    margin-right: 34px;
+}
+.main-header-container {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 190px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 670px;
+
+    .menu-list {
+        list-style: none;
+        display: flex;
+
+        .menu-item {
+            margin-right: 25px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+    }
+}
