@@ -32,21 +32,40 @@
 	}
 }
 .contents-container {
+	margin: 5px;
 	display: flex;
 	justify-content: center;
 
 	.search-container {
+		display: flex;
 		width: 1060px;
 		height: 60px;
-		border: 1px solid #000;
-
+		margin: auto;
+		justify-content: center;
+		.search-option {
+			width: 109px;
+			height: 49px;
+			border-radius: 15px;
+			border: 1px solid #000;
+			background: #FFFDFD;
+			margin-right: 10px;
+		}
 		.search-input {
 			width: 550px;
-			height: 58px;
-			justify-content: center;
+			height: 49px;
 			border-radius: 25px;
+			padding-left:10px;
 			border: 1px solid #000;
 			background: #fffdfd;
+			
+		}
+		.btn-search {
+			content: url("./assets/images/search.svg");
+			cursor: pointer;
+			width: 40px;
+			height: 40px;
+			margin-top: 5px;
+			margin-left: 5px;
 		}
 	}
 }

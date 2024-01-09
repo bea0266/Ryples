@@ -19,7 +19,13 @@ export default function MainView() {
 			</div>
 			<div className={styles["contents-container"]}>
 				<div className={styles["search-container"]}>
+					<select className={styles["search-option"]}>
+						<option>제목</option>
+						<option>내용</option>
+						<option>제목+내용</option>
+					</select>
 					<input className={styles["search-input"]} placeholder="검색할 내용을 입력해주세요." />
+					<img className={styles["btn-search"]} />
 				</div>
 			</div>
 		</>
