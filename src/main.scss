@@ -1,3 +1,8 @@
+.sub-tit {
+	text-align: left;
+	font-size: 15px;
+	font-weight: 600;
+}
 .logo {
 	content: url("./assets/images/logo.png");
 	width: 200px;
@@ -33,7 +38,7 @@
 }
 .contents-container {
 	margin: 5px;
-	display: flex;
+	display: block;
 	justify-content: center;
 
 	.search-container {
@@ -43,7 +48,7 @@
 		margin: auto;
 		justify-content: center;
 		.search-option {
-			width: 109px;
+			width: 160px;
 			height: 49px;
 			border-radius: 15px;
 			border: 1px solid #000;
@@ -51,7 +56,7 @@
 			margin-right: 10px;
 		}
 		.search-input {
-			width: 550px;
+			width: 750px;
 			height: 49px;
 			border-radius: 25px;
 			padding-left:10px;
@@ -68,6 +73,37 @@
 			margin-left: 5px;
 		}
 	}
+
+	.border-container {
+		width: 950px;
+		margin: 25px auto;
+		.weekly-best-title {
+			margin-bottom: 15px;
+		}
+		.weekly-best-container {
+			ul {
+				display: table-row;
+				list-style: none;
+
+				li {
+					display: table-cell;
+					.img {
+						width: 150px;
+						height: 100px;
+						background-color: #646262;
+						margin-right: 20px;
+						margin-bottom: 25px;
+					}
+					.title {
+						text-align: center;
+						font-size: 12px;
+					}
+				}
+			}
+			
+		}
+	}
+
 }
 
 .btn-container {

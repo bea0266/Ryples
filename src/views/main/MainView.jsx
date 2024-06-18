@@ -1,33 +1,38 @@
-import styles from "/src/main.module.scss";
-import MenuComp from "/src/views/components/MenuComp";
+import "/src/main.scss";
+import { Link, useNavigate, Outlet } from "react-router-dom";
 /** 메인 화면 */
 export default function MainView() {
+	const navigate = useNavigate();
+	const linkToLogin = () => {
+		navigate("/login");
+	};
+	const clickLogo = () => {
+		navigate("");
+	}
 	return (
 		<>
-			<div className={styles["main-header-container"]}>
-				<img className={styles.logo} />
-				<div className={styles["menu-container"]}>
-					<MenuComp />
+			<div className="main-header-container">
+				<img className="logo" onClick={clickLogo} />
+
+				<div className="menu-container">
+					<ul className="menu-list">
+						{/* <li className="menu-item"><Link to="/notice">공지사항</Link></li> */}
+						<li className="menu-item">
+							<Link to="/community">커뮤니티</Link>
+						</li>
+						<li className="menu-item"><Link to="/resources">자료실</Link></li>
+						<li className="menu-item"><Link to="/developer-contact">개발자 문의</Link></li>
+					</ul>
 				</div>
-				<div className={styles["btn-container"]}>
-					<button className={styles["btn-item"]}>
-						다크 모드 OFF
+				<div className="btn-container">
+					<button className="btn-item">다크 모드 OFF</button>
+					<button className="btn-item">설정</button>
+					<button className="btn-item" onClick={linkToLogin}>
+						로그인
 					</button>
-					<button className={styles["btn-item"]}>설정</button>
-					<button className={styles["btn-item"]}>로그인</button>
 				</div>
 			</div>
-			<div className={styles["contents-container"]}>
-				<div className={styles["search-container"]}>
-					<select className={styles["search-option"]}>
-						<option>제목</option>
-						<option>내용</option>
-						<option>제목+내용</option>
-					</select>
-					<input className={styles["search-input"]} placeholder="검색할 내용을 입력해주세요." />
-					<img className={styles["btn-search"]} />
-				</div>
-			</div>
+			<Outlet />
 		</>
 	);
 }
