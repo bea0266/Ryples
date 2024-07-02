@@ -10,5 +10,10 @@ export default defineConfig({
             quietDeps: true
         },
     }
-},
+  },
+  server: {
+    hmr: {
+        overlay: false
+    }
+  }
 })

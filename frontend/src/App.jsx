@@ -6,18 +6,23 @@ import CommunityMainView from "./views/pages/community/CommunityMainView";
 import ResourcesView from "./views/pages/resources/ResourcesView";
 import DeveloperContactView from "./views/pages/developerContact/DeveloperContactView";
 import MainContentView from "./views/main/components/MainContentView";
+import PageNotFoundView from "./views/pages/PageNotFoundView";
 
 function App() {
 	return (
 		<>
 			<Routes>
 				<Route path="/login" element={<LoginView />} />
-				<Route path="/" element={<MainView />}>
+				<Route path="/" element={<MainView />} exact>
 					<Route path="" element={<MainContentView />} />
 					<Route path="community" element={<CommunityMainView />} />
 					<Route path="resources" element={<ResourcesView />} />
-					<Route path="developer-contact" element={<DeveloperContactView />} />
+					<Route
+						path="developer-contact"
+						element={<DeveloperContactView />}
+					/>
 				</Route>
+				<Route path="*" element={<PageNotFoundView />} />
 			</Routes>
 		</>
 	);

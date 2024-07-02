@@ -26,6 +26,7 @@
 
 	.menu-list {
 		list-style: none;
+		text-decoration: none;
 		display: flex;
 
 		.menu-item {
@@ -33,6 +34,21 @@
 			font-size: 20px;
 			font-weight: 400;
 			line-height: normal;
+
+			// Target the router-link directly if it's a custom component
+			router-link {
+				text-decoration: none;
+
+				// If the router-link renders an <a> tag inside, target it specifically
+				& a {
+					text-decoration: none;
+				}
+			}
+
+			// Alternatively, if you want to globally remove underlines from all links
+			a {
+				text-decoration: none;
+			}
 		}
 	}
 }
@@ -52,17 +68,16 @@
 			height: 49px;
 			border-radius: 15px;
 			border: 1px solid #000;
-			background: #FFFDFD;
+			background: #fffdfd;
 			margin-right: 10px;
 		}
 		.search-input {
 			width: 750px;
 			height: 49px;
 			border-radius: 25px;
-			padding-left:10px;
+			padding-left: 10px;
 			border: 1px solid #000;
 			background: #fffdfd;
-			
 		}
 		.btn-search {
 			content: url("./assets/images/search.svg");
@@ -100,10 +115,8 @@
 					}
 				}
 			}
-			
 		}
 	}
-
 }
 
 .btn-container {
