@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Board {
+  ID           BigInt   @id @default(autoincrement()) @map("ID") // 게시글 아이디
+  TITLE        String   @map("TITLE") // 제목
+  WRITER       String   @map("WRITER") // 게시자
+  CREATED_DATE DateTime @default(now()) @map("CREATED_DATE") // 생성일자
+  UPDATED_DATE DateTime? @updatedAt @map("UPDATED_DATE") // 수정일자
+  HITS         Int      @default(0) @map("HITS") // 조회수
+  RECOMMENDS   Int      @default(0) @map("RECOMMENDS") // 추천수
+  CONTENTS     String   @map("CONTENTS") // 내용
+  COMMENTS     Int      @default(0) @map("COMMENTS") // 댓글수
+  CATEGORY     Int      @default(0) @map("CATEGORY") // 카테고리
+
+  @@map("tb_board")
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}

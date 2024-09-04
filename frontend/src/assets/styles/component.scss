@@ -4,80 +4,96 @@
 	height: 700px;
     margin: 0 auto;
     padding: 0;
+
     .ant-table-wrapper {
         padding: 0 20px 0 20px;
     }
-	.search-container {
-        border-color: $border-color;
-        padding: 0 15px 0 15px;
+
+    .flex-container {
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        justify-content:flex-start;
-		height: 75px;
-		margin-top: 25px;
-		.search-option {
-			width: 110px;
-			height: 35px;
-			margin-left: 10px;
-            padding-left: $padding-left;
-            font-size: 14px;
-			border-color: $border-color;
-			--webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
 
-			// 화살표를 숨기고 커스텀 화살표 추가
-			background-image: url("../images/reverse_arrow.svg");
-			background-repeat: no-repeat;
-			background-position: right 10px center;
-			background-size: 9px;
-
-			// select 요소를 감싸는 컨테이너에 가상 요소로 화살표 추가
-			&::after {
-				content: "";
-				position: absolute;
-				right: 10px;
-				top: 50%;
-				transform: translateY(-50%);
-				width: 0;
-				height: 0;
-				border-left: 5px solid transparent;
-				border-right: 5px solid transparent;
-			}
-		}
-        .search-input {
-            width: 280px;
-            height: 35px;
-            margin-left: 2px;
-            padding-left: 10px;
-            font-size: 14px;
+        .search-container {
             border-color: $border-color;
-        }
-        .btn-search {
-            content: "검색";
-            color: white;
-            width: 75px;
-            height: 35px;
-            margin-left: 2px;
-            background-color: $border-color;
-            background-image: url("../images/search2.svg");
-			background-repeat: no-repeat;
-			background-position: right 10px center;
-			background-size: 15px;
-            cursor: pointer;
-
-            &::before {
-              content: "검색";
-              display: flex;
-              padding-left: $padding-left;
-              font-size: 14px;
-              margin-left: 2px;
-              justify-content: flex-start;
-              align-items: center;
-              height: 100%;
-              width: 100%;    
+            padding: 0 15px 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content:flex-start;
+            height: 75px;
+            margin-top: 25px;
+            .search-option {
+                width: 110px;
+                height: 35px;
+                margin-left: 10px;
+                padding-left: $padding-left;
+                font-size: 14px;
+                border-color: $border-color;
+                --webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+    
+                // 화살표를 숨기고 커스텀 화살표 추가
+                background-image: url("../images/reverse_arrow.svg");
+                background-repeat: no-repeat;
+                background-position: right 10px center;
+                background-size: 9px;
+    
+                // select 요소를 감싸는 컨테이너에 가상 요소로 화살표 추가
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 0;
+                    height: 0;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                }
             }
-
+            .search-input {
+                width: 280px;
+                height: 35px;
+                margin-left: 2px;
+                padding-left: 10px;
+                font-size: 14px;
+                border-color: $border-color;
+            }
+            .btn-search {
+                content: "검색";
+                color: white;
+                width: 75px;
+                height: 35px;
+                margin-left: 2px;
+                background-color: $border-color;
+                background-image: url("../images/search2.svg");
+                background-repeat: no-repeat;
+                background-position: right 10px center;
+                background-size: 15px;
+                cursor: pointer;
+    
+                &::before {
+                  content: "검색";
+                  display: flex;
+                  padding-left: $padding-left;
+                  font-size: 14px;
+                  margin-left: 2px;
+                  justify-content: flex-start;
+                  align-items: center;
+                  height: 100%;
+                  width: 100%;    
+                }
+    
+            }
         }
-	}
+        .action-container {
+            display: flex;
+            width: 400px;
+            justify-content: flex-end;
+            padding-right: 20px;
+            
+        }
+    }
+
 }
