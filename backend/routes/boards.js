@@ -14,33 +14,27 @@ router.get("/", async function (req, res, next) {
     let whereClause = {};
 
     if (searchType === 'title') {
-        whereClause = { TITLE: title };
+        whereClause = { title: title };
     } else if (searchType === 'contents') {
-        whereClause = { CONTENTS: contents };
+        whereClause = { contents: contents };
     } else {
-        whereClause = { TITLE: title }; // 기본적으로 TITLE로 검색
+        whereClause = { title: title }; // 기본적으로 TITLE로 검색
     }
 
 	const boards = await prisma.board.findMany({
 		where: whereClause,
 	});
 	console.log('boards', boards);
-	const results = boards.map(item => {
+
+	// bigint 타입은 JSON으로 변환할 때 문제가 생기므로 string으로 변환
+	const results = boards.map((item) => {
 		return {
-			id: String(item.ID),
-			title: item.TITLE,
-			writer: item.WRITER,
-			createdDate: item.CREATED_DATE,
-			updatedDate: item.UPDATED_DATE,
-			hits: item.HITS,
-			recommends: item.RECOMMENDS,
-			contents: item.CONTENTS,
-			comments: item.COMMENTS,
-			category: item.CATEGORY,
+			...item,
+			id: item.id.toString(),
 		};
 	});
-
-	return res.json(results);
+	// TODO: 상태 코드 enum 처리
+	return res.status(200).json({ data: results });
 });
 
 /* 게시글 상세 조회 */

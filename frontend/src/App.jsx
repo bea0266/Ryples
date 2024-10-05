@@ -9,6 +9,7 @@ import DeveloperContactView from "./views/pages/developerContact/DeveloperContac
 import MainContentView from "./views/main/components/MainContentView";
 import PageNotFoundView from "./views/pages/PageNotFoundView";
 import PostDetailView from "./views/pages/community/PostDetailView";
+import PostWriteView from "./views/pages/community/PostWriteView";
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 					<Route path="" element={<MainContentView />} />
 					<Route path="community" element={<CommunityMainView />} />
 					<Route path="community/detail/:id" element={<PostDetailView />} />
+					<Route path="community/write" element={<PostWriteView />} />
 					<Route path="resources" element={<ResourcesView />} />
 					<Route
 						path="developer-contact"

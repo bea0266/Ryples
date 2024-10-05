@@ -9,16 +9,16 @@ generator client {
 }
 
 model Board {
-  ID           BigInt   @id @default(autoincrement()) @map("ID") // 게시글 아이디
-  TITLE        String   @map("TITLE") // 제목
-  WRITER       String   @map("WRITER") // 게시자
-  CREATED_DATE DateTime @default(now()) @map("CREATED_DATE") // 생성일자
-  UPDATED_DATE DateTime? @updatedAt @map("UPDATED_DATE") // 수정일자
-  HITS         Int      @default(0) @map("HITS") // 조회수
-  RECOMMENDS   Int      @default(0) @map("RECOMMENDS") // 추천수
-  CONTENTS     String   @map("CONTENTS") // 내용
-  COMMENTS     Int      @default(0) @map("COMMENTS") // 댓글수
-  CATEGORY     Int      @default(0) @map("CATEGORY") // 카테고리
+  id           BigInt   @id @default(autoincrement()) // 게시글 아이디
+  title        String   // 제목
+  writer       String   // 게시자
+  createdDate DateTime  @default(now()) // 생성일자
+  updatedDate DateTime? @updatedAt // 수정일자
+  hits         Int      @default(0) // 조회수
+  recommends   Int      @default(0) // 추천수
+  contents     String   // 내용
+  comments     Int      @default(0) // 댓글수
+  category     Int      @default(0) // 카테고리
 
   @@map("tb_board")
 }
