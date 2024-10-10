@@ -38,16 +38,18 @@ router.get("/", async function (req, res, next) {
 });
 
 /* 게시글 상세 조회 */
-router.get("/:postId", function (req, res, next) {
-	console.log("req: ", req.params.postId);
-	return res.json({
-		id: req.params.postId,
-		title: "제목입니다.",
-		description: "내용입니다.",
-		writer: "배승찬8",
-		writeDate: "2024-06-27 10:00:00",
-		hits: 10,
-		recommends: 10,
-	});
+router.get("/:postId", async function (req, res, next) {
+	const details = await prisma.board.findUnique({
+		where: { id: Number(req.params.postId) },
+	})
+    
+	console.log('details', details);
+
+    const result = {
+		...details,
+		id: details.id.toString(),
+	};
+	return res.status(200).json(result);
 });
+
 module.exports = router;
